@@ -28,10 +28,18 @@
             <p>Humidity: {{ weatherInfo.main.humidity }}%</p>
           </div>
           <div class="plus-widget-location-weather-info__item">
-            <p>Dev point: 97%</p>
+            <p>
+              Dev point:
+              {{
+                calcDewPoint(
+                  weatherInfo.main.temp.toFixed(0),
+                  weatherInfo.main.humidity
+                )
+              }}℃
+            </p>
           </div>
           <div class="plus-widget-location-weather-info__item">
-            <p>Visibility: 97%</p>
+            <p>Visibility: {{ weatherInfo.visibility / 1000 }}km</p>
           </div>
         </div>
       </template>
@@ -54,6 +62,7 @@ import {
 } from "@/components/PlusWidget/interfaces";
 import { Api } from "@/api/api";
 import { computed, ref } from "vue";
+import { calcDewPoint } from "@/helpers/helpers";
 
 const props = defineProps<{
   city: UserCity;
