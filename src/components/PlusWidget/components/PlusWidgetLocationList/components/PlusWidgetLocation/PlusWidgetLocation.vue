@@ -29,7 +29,7 @@
           </div>
           <div class="plus-widget-location-weather-info__item">
             <p>
-              Dev point:
+              Dew point:
               {{
                 calcDewPoint(
                   weatherInfo.main.temp.toFixed(0),
