@@ -4,11 +4,12 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --inline --name plus-widget src/main.ts",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "vue": "^3.2.13"
+    "vue": "^3.2.13",
+    "vuedraggable": "^4.1.0"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.4.0",
@@ -24,12 +25,14 @@
     "prettier": "^2.4.1",
     "sass": "^1.32.7",
     "sass-loader": "^12.0.0",
-    "typescript": "~4.5.5"
+    "typescript": "~4.5.5",
+    "vue-svg-loader": "^0.17.0-beta.2"
   },
   "eslintConfig": {
     "root": true,
     "env": {
-      "node": true
+      "node": true,
+      "vue/setup-compiler-macros": true
     },
     "extends": [
       "plugin:vue/vue3-essential",

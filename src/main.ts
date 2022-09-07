@@ -1,4 +1,6 @@
-import { createApp } from "vue";
-import App from "./App.vue";
+import PlusWidget from "./components/PlusWidget/PlusWidget.ce.vue";
+import { defineCustomElement } from "vue";
 
-createApp(App).mount("#app");
+const element = defineCustomElement(PlusWidget);
+
+customElements.define("plus-widget", element);
